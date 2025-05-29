@@ -238,7 +238,7 @@ def mes3DPlt(toPlot,mode):
     plt.clf
     fig = plt.figure()
     if __matplotVersion__ >= 1.0:
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(projection='3d')
     else:
         ax = Axes3D(fig)
     for j,wl in enumerate(matrix):
