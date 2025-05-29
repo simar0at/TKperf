@@ -235,18 +235,18 @@ class SsdIopsTest(DeviceTest):
         except RuntimeError:
             logging.error("# Could not carry out secure erase for "+self.getDevice().getDevPath())
             raise
-        try:
-            if self.getOptions() == None:
-                self.getDevice().precondition(1,1)
-            else:
-                if self.getOptions().getNj() != None:
-                    nj = self.getOptions().getNj()
-                if self.getOptions().getIod() != None:
-                    iod = self.getOptions().getIod()
-                self.getDevice().precondition(nj,iod)
-        except RuntimeError:
-            logging.error("# Could not carry out preconditioning for "+self.getDevice().getDevPath())
-            raise
+#        try:
+#            if self.getOptions() == None:
+#                self.getDevice().precondition(1,1)
+#            else:
+#                if self.getOptions().getNj() != None:
+#                    nj = self.getOptions().getNj()
+#                if self.getOptions().getIod() != None:
+#                    iod = self.getOptions().getIod()
+#                self.getDevice().precondition(nj,iod)
+#        except RuntimeError:
+#            logging.error("# Could not carry out preconditioning for "+self.getDevice().getDevPath())
+#            raise
         logging.info("########### Starting IOPS Test ###########")
         steadyState = self.runRounds()
         if steadyState == False:
@@ -427,18 +427,18 @@ class SsdLatencyTest(DeviceTest):
         except RuntimeError:
             logging.error("# Could not carry out secure erase for "+self.getDevice().getDevPath())
             raise
-        try:
-            if self.__userOptions == None:
-                self.getDevice().precondition(1,1)
-            else:
-                if self.__userOptions.getNj() != None:
-                    nj = self.__userOptions.getNj()
-                if self.__userOptions.getIod() != None:
-                    iod = self.__userOptions.getIod()
-                self.getDevice().precondition(nj,iod)
-        except RuntimeError:
-            logging.error("# Could not carry out preconditioning for "+self.getDevice().getDevPath())
-            raise
+#        try:
+#            if self.__userOptions == None:
+#                self.getDevice().precondition(1,1)
+#            else:
+#                if self.__userOptions.getNj() != None:
+#                    nj = self.__userOptions.getNj()
+#                if self.__userOptions.getIod() != None:
+#                    iod = self.__userOptions.getIod()
+#                self.getDevice().precondition(nj,iod)
+#        except RuntimeError:
+#            logging.error("# Could not carry out preconditioning for "+self.getDevice().getDevPath())
+#            raise
         logging.info("########### Starting Latency Test ###########")
         steadyState = self.runRounds()
         if steadyState == False:
